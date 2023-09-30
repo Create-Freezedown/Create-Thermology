@@ -94,6 +94,12 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven {
+        url "https://modmaven.dev/"
+        content {
+            includeGroup "blusunrize.immersiveengineering"
+        }
+    }
 
     mavenLocal()
     flatDir {
@@ -112,6 +118,7 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}")
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${project.ie_version}")
 }
 
 jar {
