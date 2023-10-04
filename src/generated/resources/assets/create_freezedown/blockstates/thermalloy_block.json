@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "temperature=cold": {
+      "model": "create_freezedown:block/thermalloy_block_cold"
+    },
+    "temperature=freezing": {
+      "model": "create_freezedown:block/thermalloy_block_freezing"
+    },
+    "temperature=hot": {
+      "model": "create_freezedown:block/thermalloy_block_hot"
+    },
+    "temperature=normal": {
+      "model": "create_freezedown:block/thermalloy_block_normal"
+    },
+    "temperature=scalding": {
+      "model": "create_freezedown:block/thermalloy_block_scalding"
+    },
+    "temperature=warm": {
+      "model": "create_freezedown:block/thermalloy_block_warm"
+    }
+  }
+}
