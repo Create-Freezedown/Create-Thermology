@@ -1,6 +1,8 @@
 {
   "values": [
     "create_freezedown:thermalloy_block",
-    "create_freezedown:cog_crank"
+    "create_freezedown:cog_crank",
+    "create_freezedown:bronze_tank",
+    "create_freezedown:boiler_tank"
   ]
 }

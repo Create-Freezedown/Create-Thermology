@@ -1,6 +1,9 @@
 {
+  "block.create_freezedown.boiler_tank": "Boiler Tank",
+  "block.create_freezedown.bronze_tank": "Bronze Tank",
   "block.create_freezedown.cog_crank": "Cog Crank",
   "block.create_freezedown.thermalloy_block": "Block of Thermalloy",
+  "fluid.create_freezedown.steam": "Steam",
   "item.create_freezedown.thermalloy_ingot": "Thermalloy Ingot",
   "item.create_freezedown.thermalloy_nugget": "Thermalloy Nugget",
   "item.create_freezedown.thermalloy_sheet": "Thermalloy Sheet"

@@ -1,22 +1,31 @@
 package com.pouffydev.create_freezedown;
 
 import com.pouffydev.create_freezedown.content.block.ThermalloyBlock;
+import com.pouffydev.create_freezedown.content.fluids.boiler.boiler_tank.BoilerTankBlock;
+import com.pouffydev.create_freezedown.content.fluids.boiler.boiler_tank.BoilerTankItem;
+import com.pouffydev.create_freezedown.content.fluids.boiler.boiler_tank.BoilerTankModel;
+import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeTankBlock;
+import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeTankItem;
+import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeTankModel;
 import com.pouffydev.create_freezedown.content.kinetics.cog_crank.CogCrankBlock;
 import com.pouffydev.create_freezedown.foundation.client.CTBlockStateGen;
 import com.pouffydev.create_freezedown.foundation.creative.CTItemTab;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.Create;
+import com.simibubi.create.content.fluids.tank.FluidTankGenerator;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.crank.HandCrankBlock;
 import com.simibubi.create.foundation.block.ItemUseOverrides;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.BlockStateGen;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.simibubi.create.foundation.utility.Color;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.BlockTags;
@@ -30,6 +39,7 @@ import static com.pouffydev.create_freezedown.Thermology.REGISTRATE;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.*;
 
+@SuppressWarnings({"removal", "LambdaBodyCanBeCodeBlock"})
 public class CTBlocks {
     static {
         REGISTRATE.creativeModeTab(() -> CTItemTab.BASE_CREATIVE_TAB);
@@ -72,6 +82,31 @@ public class CTBlocks {
             .onRegister(ItemUseOverrides::addBlock)
             .item()
             .transform(customItemModel())
+            .register();
+    
+    public static final BlockEntry<BronzeTankBlock> bronzeTank = REGISTRATE.block("bronze_tank", BronzeTankBlock::regular)
+            .initialProperties(SharedProperties::copperMetal)
+            .properties(BlockBehaviour.Properties::noOcclusion)
+            .properties(p -> p.isRedstoneConductor((p1, p2, p3) -> true))
+            .transform(pickaxeOnly())
+            .blockstate(new FluidTankGenerator()::generate)
+            .onRegister(CreateRegistrate.blockModel(() -> BronzeTankModel::standard))
+            .addLayer(() -> RenderType::cutoutMipped)
+            .item(BronzeTankItem::new)
+            .model(AssetLookup.customBlockItemModel("_", "block_single_window"))
+            .build()
+            .register();
+    public static final BlockEntry<BoilerTankBlock> boilerTank = REGISTRATE.block("boiler_tank", BoilerTankBlock::regular)
+            .initialProperties(SharedProperties::copperMetal)
+            .properties(BlockBehaviour.Properties::noOcclusion)
+            .properties(p -> p.isRedstoneConductor((p1, p2, p3) -> true))
+            .transform(pickaxeOnly())
+            .blockstate(new FluidTankGenerator()::generate)
+            .onRegister(CreateRegistrate.blockModel(() -> BoilerTankModel::standard))
+            .addLayer(() -> RenderType::cutoutMipped)
+            .item(BoilerTankItem::new)
+            .model(AssetLookup.customBlockItemModel("_", "block_single_window"))
+            .build()
             .register();
     public static void register() {}
 }

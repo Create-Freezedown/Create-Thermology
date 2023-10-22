@@ -1,6 +1,9 @@
 {
+  "block.create_freezedown.boiler_tank": "ʞuɐ⟘ ɹǝןıoᗺ",
+  "block.create_freezedown.bronze_tank": "ʞuɐ⟘ ǝzuoɹᗺ",
   "block.create_freezedown.cog_crank": "ʞuɐɹƆ boƆ",
   "block.create_freezedown.thermalloy_block": "ʎoןןɐɯɹǝɥ⟘ ɟo ʞɔoןᗺ",
+  "fluid.create_freezedown.steam": "ɯɐǝʇS",
   "item.create_freezedown.thermalloy_ingot": "ʇobuI ʎoןןɐɯɹǝɥ⟘",
   "item.create_freezedown.thermalloy_nugget": "ʇǝbbnN ʎoןןɐɯɹǝɥ⟘",
   "item.create_freezedown.thermalloy_sheet": "ʇǝǝɥS ʎoןןɐɯɹǝɥ⟘"

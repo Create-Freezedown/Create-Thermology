@@ -1,6 +1,10 @@
 package com.pouffydev.create_freezedown;
 
 import com.mojang.logging.LogUtils;
+import com.pouffydev.create_freezedown.content.fluids.OpenEndedPipeEffects;
+import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeTankHeaters;
+import com.pouffydev.create_freezedown.foundation.FreezedownRegistrate;
+import com.pouffydev.create_freezedown.foundation.client.CTPartialModels;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -25,7 +29,7 @@ public class Thermology
     public static final String ID = "create_freezedown";
     private static final Logger LOGGER = LogUtils.getLogger();
     
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
+    public static final FreezedownRegistrate REGISTRATE = FreezedownRegistrate.create(ID);
     
     public Thermology()
     {
@@ -38,9 +42,17 @@ public class Thermology
         CTItems.register();
         CTBlocks.register();
         CTBlockEntityTypes.register();
+        CTFluids.register();
         //CTMultiblocks.init();
         
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> CTClient.onCtorClient(modEventBus, forgeEventBus));
+    }
+    @SubscribeEvent
+    public void setup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            OpenEndedPipeEffects.register();
+            BronzeTankHeaters.registerDefaults();
+        });
     }
     private void commonSetup(final FMLCommonSetupEvent event)
     {

@@ -7,7 +7,6 @@ public class CTPartialModels {
     public static final PartialModel
             HAND_CRANK_HANDLE = block("cog_crank/handle")
             ;
-    
     private static PartialModel block(String path) {
         return new PartialModel(Thermology.asResource("block/" + path));
     }

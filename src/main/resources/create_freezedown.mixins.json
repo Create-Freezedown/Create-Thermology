@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "priority": 1100,
+  "package": "com.pouffydev.create_freezedown.foundation.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "create_freezedown.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
