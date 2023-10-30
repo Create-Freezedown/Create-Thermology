@@ -1,7 +1,12 @@
 {
+  "block.create_freezedown.boiler_casing": "buısɐƆ ɹǝןıoᗺ",
   "block.create_freezedown.boiler_tank": "ʞuɐ⟘ ɹǝןıoᗺ",
   "block.create_freezedown.bronze_tank": "ʞuɐ⟘ ǝzuoɹᗺ",
   "block.create_freezedown.cog_crank": "ʞuɐɹƆ boƆ",
+  "block.create_freezedown.encased_steam_pipe": "ǝdıԀ ɯɐǝʇS pǝsɐɔuƎ",
+  "block.create_freezedown.glass_steam_pipe": "ǝdıԀ ɯɐǝʇS ssɐן⅁",
+  "block.create_freezedown.mechanical_steam_pump": "dɯnԀ ɯɐǝʇS ןɐɔıuɐɥɔǝW",
+  "block.create_freezedown.steam_pipe": "ǝdıԀ ɯɐǝʇS",
   "block.create_freezedown.thermalloy_block": "ʎoןןɐɯɹǝɥ⟘ ɟo ʞɔoןᗺ",
   "fluid.create_freezedown.steam": "ɯɐǝʇS",
   "item.create_freezedown.thermalloy_ingot": "ʇobuI ʎoןןɐɯɹǝɥ⟘",

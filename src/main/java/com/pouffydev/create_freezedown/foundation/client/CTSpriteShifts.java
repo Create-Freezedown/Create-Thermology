@@ -16,6 +16,19 @@ public class CTSpriteShifts {
             BOILER_TANK_TOP = getCT(AllCTTypes.RECTANGLE, "boiler_tank_top"),
             BOILER_TANK_INNER = getCT(AllCTTypes.RECTANGLE, "boiler_tank_inner");
     
+    public static final CTSpriteShiftEntry boilerCasing = omni("boiler_casing");
+    
+    private static CTSpriteShiftEntry omni(String name) {
+        return getCT(AllCTTypes.OMNIDIRECTIONAL, name);
+    }
+    
+    private static CTSpriteShiftEntry horizontal(String name) {
+        return getCT(AllCTTypes.HORIZONTAL, name);
+    }
+    
+    private static CTSpriteShiftEntry vertical(String name) {
+        return getCT(AllCTTypes.VERTICAL, name);
+    }
     private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {
         return CTSpriteShifter.getCT(type, asResource("block/" + blockTextureName),
                 asResource("block/" + connectedTextureName + "_connected"));

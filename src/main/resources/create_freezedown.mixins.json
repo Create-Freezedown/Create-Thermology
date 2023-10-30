@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "create_freezedown.refmap.json",
   "mixins": [
+    "FluidPropagatorMixin"
   ],
   "client": [
   ],

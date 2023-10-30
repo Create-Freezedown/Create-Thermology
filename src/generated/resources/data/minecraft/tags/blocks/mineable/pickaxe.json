@@ -3,6 +3,11 @@
     "create_freezedown:thermalloy_block",
     "create_freezedown:cog_crank",
     "create_freezedown:bronze_tank",
-    "create_freezedown:boiler_tank"
+    "create_freezedown:boiler_tank",
+    "create_freezedown:steam_pipe",
+    "create_freezedown:boiler_casing",
+    "create_freezedown:encased_steam_pipe",
+    "create_freezedown:glass_steam_pipe",
+    "create_freezedown:mechanical_steam_pump"
   ]
 }

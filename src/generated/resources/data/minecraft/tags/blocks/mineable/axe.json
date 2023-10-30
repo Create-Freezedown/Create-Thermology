@@ -1,5 +1,7 @@
 {
   "values": [
-    "create_freezedown:cog_crank"
+    "create_freezedown:cog_crank",
+    "create_freezedown:boiler_casing",
+    "create_freezedown:encased_steam_pipe"
   ]
 }
