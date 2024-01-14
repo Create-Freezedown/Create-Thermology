@@ -1,7 +1,5 @@
 package com.pouffydev.create_freezedown.content.fluids.boiler.boiler_tank;
 
-import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeBoilerData;
-import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeTankBlockEntity;
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.fluids.tank.FluidTankBlock;

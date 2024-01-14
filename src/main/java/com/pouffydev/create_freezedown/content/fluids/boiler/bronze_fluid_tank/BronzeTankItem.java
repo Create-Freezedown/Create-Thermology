@@ -101,8 +101,7 @@ public class BronzeTankItem extends BlockItem {
                 BlockState blockState = world.getBlockState(offsetPos);
                 if (BronzeTankBlock.isTank(blockState))
                     continue;
-                if (!blockState.getMaterial()
-                        .isReplaceable())
+                if (!blockState.canBeReplaced())
                     return;
                 tanksToPlace++;
             }

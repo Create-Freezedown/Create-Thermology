@@ -1,15 +1,31 @@
 {
-  "block.create_freezedown.boiler_casing": "Boiler Casing",
-  "block.create_freezedown.boiler_tank": "Boiler Tank",
-  "block.create_freezedown.bronze_tank": "Bronze Tank",
-  "block.create_freezedown.cog_crank": "Cog Crank",
-  "block.create_freezedown.encased_steam_pipe": "Encased Steam Pipe",
-  "block.create_freezedown.glass_steam_pipe": "Glass Steam Pipe",
-  "block.create_freezedown.mechanical_steam_pump": "Mechanical Steam Pump",
-  "block.create_freezedown.steam_pipe": "Steam Pipe",
-  "block.create_freezedown.thermalloy_block": "Block of Thermalloy",
-  "fluid.create_freezedown.steam": "Steam",
-  "item.create_freezedown.thermalloy_ingot": "Thermalloy Ingot",
-  "item.create_freezedown.thermalloy_nugget": "Thermalloy Nugget",
-  "item.create_freezedown.thermalloy_sheet": "Thermalloy Sheet"
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.create_freezedown.boiler_casing": "Boiler Casing",
+	"block.create_freezedown.boiler_tank": "Boiler Tank",
+	"block.create_freezedown.bronze_tank": "Bronze Tank",
+	"block.create_freezedown.cog_crank": "Cog Crank",
+	"block.create_freezedown.encased_steam_pipe": "Encased Steam Pipe",
+	"block.create_freezedown.glass_steam_pipe": "Glass Steam Pipe",
+	"block.create_freezedown.mechanical_steam_pump": "Mechanical Steam Pump",
+	"block.create_freezedown.scorch_brazier": "Scorch Brazier",
+	"block.create_freezedown.steam_pipe": "Steam Pipe",
+	"block.create_freezedown.thermalloy_block": "Block of Thermalloy",
+
+	"fluid.create_freezedown.steam": "Steam",
+
+	"item.create_freezedown.thermalloy_ingot": "Thermalloy Ingot",
+	"item.create_freezedown.thermalloy_nugget": "Thermalloy Nugget",
+	"item.create_freezedown.thermalloy_sheet": "Thermalloy Sheet",
+
+
+	"_": "->------------------------]  UI & Messages  [------------------------<-",
+
+	"create_freezedown.gui.goggles.temp_container": "Temperature Output",
+
+	"create_freezedown.message.crop_no_bonemeal": "It is too cold for this plant to grow.",
+
+	"_": "Thank you for translating Create: Freezedown!"
+
 }

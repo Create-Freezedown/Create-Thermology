@@ -14,7 +14,13 @@ import java.util.Map;
 public class CTPartialModels {
     public static final PartialModel
             HAND_CRANK_HANDLE = block("cog_crank/handle"),
-            steamPipeCasing = block("steam_pipe/casing")
+            steamPipeCasing = block("steam_pipe/casing"),
+            powerSuitHelmet = entity("powersuit_helmet"),
+            powerSuitChestplate = entity("powersuit_chestplate"),
+            powerSuitLeftArm = entity("powersuit_left_arm"),
+            powerSuitRightArm = entity("powersuit_right_arm"),
+            powerSuitLeftLeg = entity("powersuit_left_leg"),
+            powerSuitRightLeg = entity("powersuit_right_leg")
             ;
     private static PartialModel block(String path) {
         return new PartialModel(Thermology.asResource("block/" + path));

@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-29T16:11:41.5241388	Registrate Provider for create_freezedown [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-10-31T11:26:05.5478251	Registrate Provider for create_freezedown [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 df90021f31ee55b87ecbb398498cc4c7c3c56b3c assets/create_freezedown/blockstates/boiler_casing.json
 1f317f0164884ea7df897b8ab06692c76a8cff4c assets/create_freezedown/blockstates/boiler_tank.json
 bc0da8f7fb6ea7fe2b8878bff37098687280ce13 assets/create_freezedown/blockstates/bronze_tank.json
@@ -6,10 +6,11 @@ bc0da8f7fb6ea7fe2b8878bff37098687280ce13 assets/create_freezedown/blockstates/br
 c9c26cc326e0f6bbea368d19c5ea38b84cca4476 assets/create_freezedown/blockstates/encased_steam_pipe.json
 1f8af75a2808fcbcc487a0925ab9ebec9647ae9a assets/create_freezedown/blockstates/glass_steam_pipe.json
 c0b1c303229a5151d5a4b30e8668a86c337fe256 assets/create_freezedown/blockstates/mechanical_steam_pump.json
+d0d955c2a2310e2cf435b7f518a8afafb66411c9 assets/create_freezedown/blockstates/scorch_brazier.json
 586708f7a0c532a08b702d43bbb5e5aaba49f058 assets/create_freezedown/blockstates/steam_pipe.json
 42b6a5707d723ba6c28b490d892642d212e5f2fb assets/create_freezedown/blockstates/thermalloy_block.json
-495687b17cd5c8e14b1224d4cdb52076a5a479a0 assets/create_freezedown/lang/en_ud.json
-667e21fd3b3b713df48594256eff4c53737579d5 assets/create_freezedown/lang/en_us.json
+3c95479aa837813d46f7fa8a65f5e54ae4907ecc assets/create_freezedown/lang/en_ud.json
+460775225b811d2f48a56fede64bb44ec01498e7 assets/create_freezedown/lang/en_us.json
 5d7af29d8091518c1337ea5dcf83150beb2b25b0 assets/create_freezedown/models/block/boiler_casing.json
 8a5b42eb5760fea904494903423a4c5884af6da7 assets/create_freezedown/models/block/steam_pipe/d_x.json
 c9e0874106b23dd7dfd9c6f1544f1b6bf476938f assets/create_freezedown/models/block/steam_pipe/d_y.json
@@ -52,6 +53,7 @@ efcc9c66fbe421a581e0a0f8a5a4f6be10031b9f assets/create_freezedown/models/block/t
 f29cb3304f3d250753314fb8c5802c4c41994796 assets/create_freezedown/models/item/bronze_tank.json
 b4b92a4fcd4ecd9d9071f5dec8d284632af701f9 assets/create_freezedown/models/item/cog_crank.json
 530031445a04254554ceeed6d879a9b0d2ab80d1 assets/create_freezedown/models/item/mechanical_steam_pump.json
+5771909b113ad4ea7ebde52ef7714165718d9c80 assets/create_freezedown/models/item/scorch_brazier.json
 c16062de4d9dec8c2b651c6edd98c6fcf5f1a559 assets/create_freezedown/models/item/steam_pipe.json
 0f99a6822cbb8b291be1f36b4426ad433e528987 assets/create_freezedown/models/item/thermalloy_block.json
 47975d1eeac46fcf1d6af4d36fc03a7aca994e24 assets/create_freezedown/models/item/thermalloy_ingot.json
@@ -69,6 +71,7 @@ b1cb3554d49e79168f4a9db2d3c2e969286b229d data/create_freezedown/loot_tables/bloc
 26c536687c16286ce083f1575d97fbacac70b565 data/create_freezedown/loot_tables/blocks/encased_steam_pipe.json
 26c536687c16286ce083f1575d97fbacac70b565 data/create_freezedown/loot_tables/blocks/glass_steam_pipe.json
 5652c70b83f1520133d550b93c2101257c14b9ad data/create_freezedown/loot_tables/blocks/mechanical_steam_pump.json
+5e3c40528360f0f66cd8db174c60327098dadfb4 data/create_freezedown/loot_tables/blocks/scorch_brazier.json
 26c536687c16286ce083f1575d97fbacac70b565 data/create_freezedown/loot_tables/blocks/steam_pipe.json
 06c1c700092e178c8d5586584ae8afa3ca4167a0 data/create_freezedown/loot_tables/blocks/thermalloy_block.json
 84d66bf8d332118d5242aa6541dac78faab2de28 data/create_freezedown/recipes/cog_crank.json
@@ -86,5 +89,5 @@ dbf101419fa945836c6839ee042cc1d348dda06a data/forge/tags/items/storage_blocks.js
 dbf101419fa945836c6839ee042cc1d348dda06a data/forge/tags/items/storage_blocks/thermalloy.json
 dbf101419fa945836c6839ee042cc1d348dda06a data/minecraft/tags/blocks/beacon_base_blocks.json
 90081f694b1acbe04ea0f64db4992ab817da8a41 data/minecraft/tags/blocks/mineable/axe.json
-5d07845c133ebac2ce13b56721b79e75fd4b5d43 data/minecraft/tags/blocks/mineable/pickaxe.json
+5d40bdbeb21fd2e50826aa9331ee4ccec7aa81f0 data/minecraft/tags/blocks/mineable/pickaxe.json
 dbf101419fa945836c6839ee042cc1d348dda06a data/minecraft/tags/blocks/needs_iron_tool.json

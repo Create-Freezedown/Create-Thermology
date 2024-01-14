@@ -1,5 +1,6 @@
 package com.pouffydev.create_freezedown.content.fluids.steam.scorch_brazier;
 
+import com.pouffydev.create_freezedown.CTBlockEntityTypes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.world.level.block.Block;
@@ -12,11 +13,11 @@ public class ScorchBrazierBlock extends Block implements IWrenchable, IBE<Scorch
     
     @Override
     public Class<ScorchBrazierBlockEntity> getBlockEntityClass() {
-        return null;
+        return ScorchBrazierBlockEntity.class;
     }
     
     @Override
     public BlockEntityType<? extends ScorchBrazierBlockEntity> getBlockEntityType() {
-        return null;
+        return CTBlockEntityTypes.scorchBrazier.get();
     }
 }

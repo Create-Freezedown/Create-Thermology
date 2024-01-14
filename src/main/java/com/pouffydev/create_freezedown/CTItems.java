@@ -42,7 +42,7 @@ public class CTItems {
         return AllTags.forgeItemTag("gems");
     }
     static {
-        REGISTRATE.creativeModeTab(() -> CTItemTab.BASE_CREATIVE_TAB);
+        REGISTRATE.setCreativeTab(CTItemTab.BASE_CREATIVE_TAB);
     }
     private static ItemEntry<Item> sheet(String material) {return REGISTRATE.item(material + "_sheet", Item::new).properties(p->p).tag(plates(material)).tag(plates()).register();}
     private static ItemEntry<Item> ingot(String material) {return REGISTRATE.item(material + "_ingot", Item::new).properties(p->p).tag(ingots(material)).tag(ingots()).register();}

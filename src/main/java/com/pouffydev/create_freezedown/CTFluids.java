@@ -1,6 +1,6 @@
 package com.pouffydev.create_freezedown;
 
-import com.pouffydev.create_freezedown.content.fluids.boiler.SteamFluid;
+import com.pouffydev.create_freezedown.content.fluids.steam.SteamFluid;
 import com.simibubi.create.AllTags;
 import com.tterrag.registrate.util.entry.FluidEntry;
 

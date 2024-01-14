@@ -8,6 +8,7 @@
     "create_freezedown:boiler_casing",
     "create_freezedown:encased_steam_pipe",
     "create_freezedown:glass_steam_pipe",
-    "create_freezedown:mechanical_steam_pump"
+    "create_freezedown:mechanical_steam_pump",
+    "create_freezedown:scorch_brazier"
   ]
 }

@@ -1,10 +1,10 @@
 package com.pouffydev.create_freezedown.foundation.util;
 
 import com.google.common.collect.ImmutableList;
-import com.pouffydev.create_freezedown.foundation.climate.data.ChunkData;
-import com.pouffydev.create_freezedown.foundation.climate.data.WorldClimate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
@@ -18,13 +18,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.ToIntFunction;
 
 public class CTUtils {
     public static void giveItem(Player pe, ItemStack is) {
         if (!pe.addItem(is))
-            pe.level.addFreshEntity(new ItemEntity(pe.level, pe.getX(), pe.getY(), pe.getZ(), is));
+            pe.level().addFreshEntity(new ItemEntity(pe.level(), pe.getX(), pe.getY(), pe.getZ(), is));
     }
     
     public static ToIntFunction<BlockState> getLightValueLit(int lightValue) {
@@ -45,7 +46,7 @@ public class CTUtils {
     }
     
     public static int getEnchantmentLevel(Enchantment enchID, CompoundTag tags) {
-        ResourceLocation resourcelocation = Registry.ENCHANTMENT.getKey(enchID);
+        ResourceLocation resourcelocation = ForgeRegistries.ENCHANTMENTS.getKey(enchID);
         ListTag listnbt = tags.getList("Enchantments", 10);
         
         for (int i = 0; i < listnbt.size(); ++i) {
@@ -64,8 +65,8 @@ public class CTUtils {
         return ei;
     }
     
-    public static boolean canGrassSurvive(LevelReader world, BlockPos pos) {
-        float t = ChunkData.getTemperature(world, pos);
-        return t >= WorldClimate.HEMP_GROW_TEMPERATURE && t <= WorldClimate.VANILLA_PLANT_GROW_TEMPERATURE_MAX;
-    }
+    //public static boolean canGrassSurvive(LevelReader world, BlockPos pos) {
+    //    //float t = ChunkData.getTemperature(world, pos);
+    //    //return t >= WorldClimate.HEMP_GROW_TEMPERATURE && t <= WorldClimate.VANILLA_PLANT_GROW_TEMPERATURE_MAX;
+    //}
 }

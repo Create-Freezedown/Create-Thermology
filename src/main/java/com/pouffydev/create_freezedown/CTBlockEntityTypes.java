@@ -4,9 +4,7 @@ import com.pouffydev.create_freezedown.content.fluids.boiler.boiler_tank.BoilerT
 import com.pouffydev.create_freezedown.content.fluids.boiler.boiler_tank.BoilerTankRenderer;
 import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeTankBlockEntity;
 import com.pouffydev.create_freezedown.content.fluids.boiler.bronze_fluid_tank.BronzeTankRenderer;
-import com.pouffydev.create_freezedown.content.kinetics.cog_crank.CogCrankBlockEntity;
-import com.pouffydev.create_freezedown.content.kinetics.cog_crank.CogCrankInstance;
-import com.pouffydev.create_freezedown.content.kinetics.cog_crank.CogCrankRenderer;
+import com.pouffydev.create_freezedown.content.fluids.steam.scorch_brazier.ScorchBrazierBlockEntity;
 import com.pouffydev.create_freezedown.content.kinetics.freezable.mixer.FreezableMixerBlockEntity;
 import com.pouffydev.create_freezedown.content.kinetics.freezable.mixer.FreezableMixerInstance;
 import com.pouffydev.create_freezedown.content.kinetics.freezable.mixer.FreezableMixerRenderer;
@@ -20,9 +18,6 @@ import com.simibubi.create.content.fluids.pipes.TransparentStraightPipeRenderer;
 import com.simibubi.create.content.fluids.pump.PumpBlockEntity;
 import com.simibubi.create.content.fluids.pump.PumpCogInstance;
 import com.simibubi.create.content.fluids.pump.PumpRenderer;
-import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
-import com.simibubi.create.content.kinetics.base.ShaftInstance;
-import com.simibubi.create.content.kinetics.base.ShaftRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
 import static com.simibubi.create.Create.REGISTRATE;
@@ -39,12 +34,6 @@ public class CTBlockEntityTypes {
             .instance(() -> FreezablePressInstance::new)
             .validBlocks(AllBlocks.MECHANICAL_PRESS)
             .renderer(() -> FreezablePressRenderer::new)
-            .register();
-    public static final BlockEntityEntry<CogCrankBlockEntity> cogCrank = REGISTRATE
-            .blockEntity("cog_crank", CogCrankBlockEntity::new)
-            .instance(() -> CogCrankInstance::new)
-            .validBlocks(CTBlocks.cogCrank)
-            .renderer(() -> CogCrankRenderer::new)
             .register();
     public static final BlockEntityEntry<BronzeTankBlockEntity> bronzeTank = REGISTRATE
             .blockEntity("bronze_tank", BronzeTankBlockEntity::new)
@@ -75,12 +64,10 @@ public class CTBlockEntityTypes {
             .validBlocks(CTBlocks.steamPump)
             .renderer(() -> PumpRenderer::new)
             .register();
-    //public static final BlockEntityEntry<KineticBlockEntity> freezedownEncasedShaft = REGISTRATE
-    //        .blockEntity("freezedown_encased_shaft", KineticBlockEntity::new)
-    //        .instance(() -> ShaftInstance::new, false)
-    //        .validBlocks(CTBlocks.boilerEncasedShaft)
-    //        .renderer(() -> ShaftRenderer::new)
-    //        .register();
+    public static final BlockEntityEntry<ScorchBrazierBlockEntity> scorchBrazier = REGISTRATE
+            .blockEntity("scorch_brazier", ScorchBrazierBlockEntity::new)
+            .validBlocks(CTBlocks.scorchBrazier)
+            .register();
     
     public static void register() {}
 }

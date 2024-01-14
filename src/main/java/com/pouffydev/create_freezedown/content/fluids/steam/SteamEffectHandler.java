@@ -1,6 +1,5 @@
 package com.pouffydev.create_freezedown.content.fluids.steam;
 
-import com.pouffydev.create_freezedown.content.fluids.boiler.SteamFluid;
 import com.simibubi.create.content.fluids.OpenEndedPipe;
 import com.simibubi.create.content.kinetics.steamEngine.SteamEngineBlock;
 import com.simibubi.create.content.kinetics.steamEngine.SteamJetParticleData;
