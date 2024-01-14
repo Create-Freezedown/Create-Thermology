@@ -12,7 +12,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -21,7 +20,7 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ResearchUtils {
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -146,26 +145,27 @@ public class ResearchUtils {
         return true;
     }
     public static boolean canItemBeResearched(Item toCheck, ResearchTypes researchType) {
-        if (Objects.equals(researchType.getType(), "item_use")) {
-            for (Item item : ItemListeners.ItemUseListener.items.values()) {
+        AtomicBoolean canBeResearched = new AtomicBoolean(false);
+        if (researchType == ResearchTypes.itemUse) {
+            ItemListeners.ItemUseListener.items.forEach((resourceLocation, item) -> {
                 if (item == toCheck) {
-                    return true;
+                    canBeResearched.set(true);
                 }
-            }
-        } else if (Objects.equals(researchType.getType(), "item_swing")) {
-            for (Item item : ItemListeners.ItemSwingListener.items.values()) {
+            });
+        } else if (researchType == ResearchTypes.itemSwing) {
+            ItemListeners.ItemSwingListener.items.forEach((resourceLocation, item) -> {
                 if (item == toCheck) {
-                    return true;
+                    canBeResearched.set(true);
                 }
-            }
-        } else if (Objects.equals(researchType.getType(), "block_place")) {
-            for (Item block : ItemListeners.BlockPlaceListener.items.values()) {
-                if (block == toCheck) {
-                    return true;
+            });
+        } else if (researchType == ResearchTypes.blockPlace) {
+            ItemListeners.BlockPlaceListener.items.forEach((resourceLocation, item) -> {
+                if (item == toCheck) {
+                    canBeResearched.set(true);
                 }
-            }
+            });
         }
-        return false;
+        return canBeResearched.get();
     }
     public static boolean isItemResearched(Item toCheck, Player player) {
         CompoundTag tag = player.getPersistentData();
@@ -188,32 +188,33 @@ public class ResearchUtils {
         return false;
     }
     public static boolean isItemResearched(Item toCheck, Player player, ResearchTypes researchType) {
+        AtomicBoolean isResearched = new AtomicBoolean(false);
         CompoundTag tag = player.getPersistentData();
         CompoundTag researchTag = tag.getCompound("unlocked_research");
         CompoundTag itemUseTag = researchTag.getCompound("item_use");
         CompoundTag itemSwingTag = researchTag.getCompound("item_swing");
         CompoundTag blockPlaceTag = researchTag.getCompound("block_place");
         if (tag.contains("unlocked_research")) {
-            if (researchTag.contains("item_use")) {
-                for (Item item : ItemListeners.ItemUseListener.items.values()) {
-                    if (item == toCheck && itemUseTag.contains(item.getDescriptionId())) {
-                        return true;
+            if (researchTag.contains("item_use") && researchType == ResearchTypes.itemUse) {
+                ItemListeners.ItemUseListener.items.forEach((resourceLocation, item) -> {
+                    if (item == toCheck && itemUseTag.contains(item.toString())) {
+                        isResearched.set(true);
                     }
-                }
-            } else if (researchTag.contains("item_swing")) {
+                });
+            } else if (researchTag.contains("item_swing") && researchType == ResearchTypes.itemSwing) {
                 for (Item item : ItemListeners.ItemSwingListener.items.values()) {
-                    if (item == toCheck && itemSwingTag.contains(item.getDescriptionId())) {
+                    if (item == toCheck && itemSwingTag.contains(item.toString())) {
                         return true;
                     }
                 }
-            } else if (researchTag.contains("block_place")) {
-                for (Item block : ItemListeners.BlockPlaceListener.items.values()) {
-                    if (block == toCheck && blockPlaceTag.contains(block.getDescriptionId())) {
+            } else if (researchTag.contains("block_place") && researchType == ResearchTypes.blockPlace) {
+                for (Item item : ItemListeners.BlockPlaceListener.items.values()) {
+                    if (item == toCheck && blockPlaceTag.contains(item.toString())) {
                         return true;
                     }
                 }
             }
         }
-        return false;
+        return isResearched.get();
     }
 }

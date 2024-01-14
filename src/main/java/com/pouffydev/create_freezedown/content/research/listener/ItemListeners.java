@@ -24,7 +24,7 @@ public class ItemListeners {
         @Override
         protected void apply(Map<ResourceLocation, JsonElement> object, ResourceManager resourceManager, ProfilerFiller profiler) {
             items.clear();
-            
+            ResearchUtils.LOGGER.info("Registering item use research...");
             for(Map.Entry<ResourceLocation, JsonElement> entry : object.entrySet()) {
                 ResourceLocation resourceLocation = entry.getKey();
                 JsonObject json = entry.getValue().getAsJsonObject();
@@ -34,6 +34,7 @@ public class ItemListeners {
                 try {
                     NonNullList<Item> item = ResearchUtils.deserializeItemList(json);
                     item.forEach(i -> items.put(resourceLocation, i));
+                    item.forEach(i -> ResearchUtils.LOGGER.info("Registered item use research for: {}", i));
                 } catch (IllegalArgumentException | JsonParseException jsonParseException) {
                     ResearchUtils.LOGGER.error("Parsing error loading research, {}", resourceLocation, jsonParseException);
                 }
@@ -49,7 +50,7 @@ public class ItemListeners {
         @Override
         protected void apply(Map<ResourceLocation, JsonElement> object, ResourceManager resourceManager, ProfilerFiller profiler) {
             items.clear();
-            
+            ResearchUtils.LOGGER.info("Registering item swing research...");
             for(Map.Entry<ResourceLocation, JsonElement> entry : object.entrySet()) {
                 ResourceLocation resourceLocation = entry.getKey();
                 JsonObject json = entry.getValue().getAsJsonObject();
@@ -59,6 +60,7 @@ public class ItemListeners {
                 try {
                     NonNullList<Item> item = ResearchUtils.deserializeItemList(json);
                     item.forEach(i -> items.put(resourceLocation, i));
+                    item.forEach(i -> ResearchUtils.LOGGER.info("Registered item swing research for: {}", i));
                 } catch (IllegalArgumentException | JsonParseException jsonParseException) {
                     ResearchUtils.LOGGER.error("Parsing error loading research, {}", resourceLocation, jsonParseException);
                 }
@@ -74,7 +76,7 @@ public class ItemListeners {
         @Override
         protected void apply(Map<ResourceLocation, JsonElement> object, ResourceManager resourceManager, ProfilerFiller profiler) {
             items.clear();
-            
+            ResearchUtils.LOGGER.info("Registering block place research...");
             for(Map.Entry<ResourceLocation, JsonElement> entry : object.entrySet()) {
                 ResourceLocation resourceLocation = entry.getKey();
                 JsonObject json = entry.getValue().getAsJsonObject();
@@ -84,6 +86,7 @@ public class ItemListeners {
                 try {
                     NonNullList<Item> item = ResearchUtils.deserializeItemList(json);
                     item.forEach(i -> items.put(resourceLocation, i));
+                    item.forEach(i -> ResearchUtils.LOGGER.info("Registered block place research for: {}", i));
                     if (!ResearchUtils.checkItemInstanceOfBlockItem(item)) {
                         ResearchUtils.LOGGER.error("Item is not an instance of BlockItem");
                         throw new IllegalArgumentException();
